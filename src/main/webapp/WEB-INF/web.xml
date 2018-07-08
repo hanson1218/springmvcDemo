@@ -1,23 +1,51 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<web-app version="3.0"
-	xmlns="http://java.sun.com/xml/ns/javaee"
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
-  <display-name>Archetype Created Web Application</display-name>
-  
-  <!-- 配置springmvc -->  
-    <servlet>  
-        <servlet-name>springMVC</servlet-name>  
-        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>  
-        <init-param>  
-            <param-name>contextConfigLocation</param-name>  
-            <param-value>classpath:spring-mvc.xml</param-value>  
-        </init-param>  
-        <load-on-startup>1</load-on-startup>  
-    </servlet>  
-    <servlet-mapping>  
-        <servlet-name>springMVC</servlet-name>  
-        <url-pattern>/</url-pattern>  
-    </servlet-mapping>  
+	<display-name>Archetype Created Web Application</display-name>
+
+	<!-- 配置 Spring -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:spring.xml</param-value>
+	</context-param>
+
+	<!-- spring框架的入口，启动spring框架,为项目提供了spring支持，初始化了Ioc容器 -->
+	<listener>
+		<description>spring监听器</description>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>  <!-- 初始化的上下文加载的Bean是对于整个应用程序共享的，不管是使用什么表现层技术，一般如DAO层、Service层Bean； -->
+	</listener>
+
+	<!-- 配置springmvc -->
+	<servlet>
+		<servlet-name>springMVC</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring-mvc.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>springMVC</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<!-- <filter>
+		<description>字符集过滤器</description>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<description>字符集编码</description>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	对于拥有相同<filter-name>的<filter>和<filter-mapping>元素而言，<filter-mapping>必须出现在<filter>之后， 
+		否则当解析到<filter-mapping>时，它所对应的<filter-name>还未定义
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> -->
 </web-app>
