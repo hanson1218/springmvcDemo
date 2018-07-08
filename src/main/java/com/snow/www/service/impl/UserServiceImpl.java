@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.snow.www.dao.UserMapper;
+import com.snow.www.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {

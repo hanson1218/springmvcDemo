@@ -17,6 +17,14 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>  <!-- 初始化的上下文加载的Bean是对于整个应用程序共享的，不管是使用什么表现层技术，一般如DAO层、Service层Bean； -->
 	</listener>
 
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>classpath:log4j.properties</param-value>
+	</context-param>
+
 	<!-- 配置springmvc -->
 	<servlet>
 		<servlet-name>springMVC</servlet-name>
@@ -32,20 +40,10 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
-	<!-- <filter>
-		<description>字符集过滤器</description>
-		<filter-name>encodingFilter</filter-name>
-		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
-		<init-param>
-			<description>字符集编码</description>
-			<param-name>encoding</param-name>
-			<param-value>UTF-8</param-value>
-		</init-param>
-	</filter>
-	对于拥有相同<filter-name>的<filter>和<filter-mapping>元素而言，<filter-mapping>必须出现在<filter>之后， 
-		否则当解析到<filter-mapping>时，它所对应的<filter-name>还未定义
-	<filter-mapping>
-		<filter-name>encodingFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping> -->
+	<!-- <filter> <description>字符集过滤器</description> <filter-name>encodingFilter</filter-name> 
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class> 
+		<init-param> <description>字符集编码</description> <param-name>encoding</param-name> 
+		<param-value>UTF-8</param-value> </init-param> </filter> 对于拥有相同<filter-name>的<filter>和<filter-mapping>元素而言，<filter-mapping>必须出现在<filter>之后， 
+		否则当解析到<filter-mapping>时，它所对应的<filter-name>还未定义 <filter-mapping> <filter-name>encodingFilter</filter-name> 
+		<url-pattern>/*</url-pattern> </filter-mapping> -->
 </web-app>
