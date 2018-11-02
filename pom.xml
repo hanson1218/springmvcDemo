@@ -11,7 +11,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
-		<spring.version>[4.3.18,)</spring.version>
+		<spring.version>4.3.18</spring.version>
 		<mybatis.version>3.1.1</mybatis.version>
 		<mybatisspring.version>1.1.1</mybatisspring.version>
 	</properties>
@@ -29,17 +29,17 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
-			<version>${spring.version}</version>
+			<version>4.3.18.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>${spring.version}</version>
+			<version>4.3.18.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>${spring.version}</version>
+			<version>4.3.18.RELEASE</version>
 		</dependency>
 		<!-- mybatis包 -->
 		<dependency>
@@ -99,6 +99,14 @@
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
+		<!-- 验证码 -->
+		<dependency>
+			<groupId>com.github.penggle</groupId>
+			<artifactId>kaptcha</artifactId>
+			<version>2.3.2</version>
+		</dependency>
+
+		<!-- 验证码 -->
 	</dependencies>
 
 	<build>
@@ -115,4 +123,6 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
 </project>

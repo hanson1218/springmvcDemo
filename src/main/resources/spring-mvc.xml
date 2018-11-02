@@ -20,4 +20,13 @@
 	</mvc:annotation-driven>
  	<!-- <mvc:default-servlet-handler/> -->	 	
 	
+	<!-- 拦截器 -->
+    <!-- <mvc:interceptors>
+    	管理员平台白名单验证
+    	  <mvc:interceptor>
+                <mvc:mapping path="/**/login.do"/>
+                
+        </mvc:interceptor>
+    	
+	</mvc:interceptors> -->
 </beans>

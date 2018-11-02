@@ -12,7 +12,6 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserMapper userMapper;
 	
-	@Override
 	public String getNameById(int id) {
 		// TODO Auto-generated method stub
 		return userMapper.selectByPrimaryKey(id).toString();
