@@ -1,19 +1,28 @@
 package com.snow.www.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.snow.www.controller.UserController;
 import com.snow.www.dao.UserMapper;
 import com.snow.www.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {
 
+	private static Logger Logger = LoggerFactory.getLogger(UserServiceImpl.class);
+	
 	@Autowired
 	private UserMapper userMapper;
 	
 	public String getNameById(int id) {
-		// TODO Auto-generated method stub
+		try {
+			int a = 1/0;
+		} catch (Exception e) {
+			Logger.error("test service");
+		}
 		return userMapper.selectByPrimaryKey(id).toString();
 	}
 

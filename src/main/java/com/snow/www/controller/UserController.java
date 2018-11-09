@@ -24,7 +24,7 @@ public class UserController {
 		try {
 			int a = 1/0;
 		} catch (Exception e) {
-			Logger.error("test");
+			Logger.error("test controller");
 		}
 		
 		return userService.getNameById(id);
