@@ -5,9 +5,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.snow.www.controller.UserController;
 import com.snow.www.dao.UserMapper;
 import com.snow.www.service.UserService;
+
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService {
 	
 	public String getNameById(int id) {
 		try {
-			int a = 1/0;
+			int a = 1/1;
 		} catch (Exception e) {
 			Logger.error("test service");
 		}

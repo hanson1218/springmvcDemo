@@ -12,6 +12,7 @@
         
 	<context:component-scan base-package="com.snow.www.service" />
         
+    <!-- spring-mybatis整合 ,-->
 	<!-- 1.分解配置 jdbc.properites -->  
 	<context:property-placeholder location="classpath:jdbc.properties" />  
     	
@@ -33,7 +34,7 @@
 		<property name="acquireRetryAttempts" value="${c3p0.acquireRetryAttempts}" />
 	</bean>
     	
-	<!-- 3.配置SqlSessionFactory对象 -->
+	<!-- 3.配置SqlSessionFactory对象 ,使用mybatis配置方式和下面这种spring配置方式都行，多数据源时要注意：dataSource中配置不同的库，这个位置也要配置不同的sqlSessionFactory和MapperScannerConfigurer-->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<!-- 注入数据库连接池 -->
 		<property name="dataSource" ref="dataSource" />
@@ -50,12 +51,16 @@
         
 	<!-- 4.配置扫描DAO接口包，动态实现DAO接口，注入到spring容器中 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<!-- 注入sqlSessionFactory -->
+		<!-- 注入sqlSessionFactory 这个位置的sqlSessionFactory要和上面一致，将来如果配置多数据源时要注意-->
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 		<!-- 给出需要扫描DAO接口包 -->
 		<property name="basePackage" value="com.snow.www.dao" />
 	</bean>
+	<!-- spring-mybatis整合 -->
 	
+	<bean id="factoryBeanTest" class="com.snow.www.init.FactoryBeanTest">
+		<property name="test" value="com.snow.www.service.impl.FactoryBeanTestServiceImpl"></property>
+	</bean>
         
 	<!-- Spring中引入其他配置文件 -->
 	<import resource="spring-tools.xml" />

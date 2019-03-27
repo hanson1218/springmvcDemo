@@ -6,7 +6,7 @@ import javax.servlet.ServletContextListener;
 
 public class ContextListenerTest2 implements ServletContextListener{
 
-	@SuppressWarnings("unused")
+//	@SuppressWarnings("unused")
     public void contextInitialized(ServletContextEvent event) {
         System.out.println("===================init ContextListener2============");
         ServletContext servletContext = event.getServletContext();

@@ -21,7 +21,7 @@ public class ContextListenerTest1 implements ServletContextListener{
         System.out.println("*************destroy ContextListener1*************");
     }
     
-    @SuppressWarnings("unused")
+//    @SuppressWarnings("unused")
     public void contextInitialized(ServletContextEvent event) {
         System.out.println("*************init ContextListener1*************");
         ServletContext servletContext = event.getServletContext();
