@@ -15,10 +15,10 @@ public class HelloController {
 		return test;
 	}
 	
-	@RequestMapping("/requestParam")
+	/*@RequestMapping("/requestParam")
 	public String testEhcahe(@RequestParam(value="name") String test){
 		return test;
-	}
+	}*/
 	
 	
 }
